@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>React App</title>
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <!-- <script type="text/javascript">
+      const currentLocation = location.href;
+      const menuItem = document.getElementsByClassName("navItem");
+      const menuLength = menuItem.length;
+      for (let i = 0; i < menuLength; i++) {
+        if (menuItem[i].href === currentLocation) {
+          menuItem[i].className = "active";
+        }
+      }
+    </script>  -->
+
+  <script type="text/javascript">
+    /* $(document).on("click", "ul li", function () {
+      $(this).addClass("active").siblings().removeClass("active");
+    }); */
+
+    //home
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop();
+      var objectSelect = $("#home");
+      var objectPosition = objectSelect.offset().top;
+      if (scroll > objectPosition) {
+        $(".sec-1").addClass("active");
+      } else {
+        $(".sec-1").removeClass("active");
+      }
+    });
+
+    //diensten
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop();
+      var objectSelect = $("#beginDiensten");
+      var objectPosition = objectSelect.offset().top;
+      if (scroll > objectPosition) {
+        $(".sec-2").addClass("active");
+        $(".sec-1").removeClass("active");
+      } else {
+        $(".sec-2").removeClass("active");
+      }
+    });
+
+    //projecten
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop();
+      var objectSelect = $("#beginProjecten");
+      var objectPosition = objectSelect.offset().top;
+      if (scroll > objectPosition) {
+        $(".sec-3").addClass("active");
+        $(".sec-2").removeClass("active");
+        /* location.hash = "#projecten" */
+      } else {
+        $(".sec-3").removeClass("active");
+      }
+
+    });
+
+    //brochures
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop();
+      var objectSelect = $("#beginBrochures");
+      var objectPosition = objectSelect.offset().top;
+      if (scroll > objectPosition) {
+        $(".sec-4").addClass("active");
+        $(".sec-3").removeClass("active");
+      } else {
+        $(".sec-4").removeClass("active");
+      }
+    });
+
+    //contact
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop();
+      var objectSelect = $("#beginContact");
+      var objectPosition = objectSelect.offset().top;
+      if (scroll > objectPosition) {
+        $(".sec-5").addClass("active");
+        $(".sec-4").removeClass("active");
+      } else {
+        $(".sec-5").removeClass("active");
+      }
+    });
+  </script>
+
+  <div id="root"></div>
+</body>
+
+</html>
